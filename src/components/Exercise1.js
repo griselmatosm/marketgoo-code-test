@@ -17,8 +17,6 @@ const Exercise1 = (props) => {
   const dataArr = Object.keys(dataGlobal).map(key => [key, dataGlobal[key]])
   console.log(dataArr);
   
-
-
   const metrics = dataArr.map((item, index) => {
   
     return (

@@ -1,11 +1,11 @@
 import { FETCH_DATA } from './actionsTypes';
 import axios from 'axios';
 
-const ROOT_URL = 'https://api.covid19api.com/summary';
+const API_URL = 'https://api.covid19api.com/summary';
 
 export const fetchDataApi = () => async (dispatch) => {
-    const response = await axios.get(ROOT_URL)
+    const response = await axios.get(API_URL)
 
-    dispatch({type: FETCH_DATA, payload: response.data})
+    dispatch({type: FETCH_DATA, payload: response.data.Global})
 }
 
