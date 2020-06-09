@@ -1,9 +1,9 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import logo from '../logo.svg'
+import '../styles/App.css'
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
-import Exercise1 from "./exercise1"
-import Exercise2 from "./exercise2"
+import Exercise1 from "./Exercise1"
+import Exercise2 from "./Exercise2"
 
 export default () =>
     <div className="ola">
