@@ -1,7 +1,6 @@
 import React from 'react'
-import logo from '../logo.svg'
-import '../styles/App.css'
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom"
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import Main from './Main'
 import Exercise1 from "./Exercise1"
 import Exercise2 from "./Exercise2"
 
@@ -18,10 +17,5 @@ export default () =>
         </section>
     </div>
 
-const Main = () =>
-    <section className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Link  to="/exercise1">Exercise 1</Link>
-        <Link  to="/exercise2">Exercise 2</Link>
-    </section>
+
 
