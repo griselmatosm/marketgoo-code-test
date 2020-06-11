@@ -3,11 +3,15 @@
 
 El propósito de este ejercicio es implementar un panel que muestre información sobre la enfermedad de Covid-19 en el mundo. Para eso, tendremos datos en 2 formatos, uno en un archivo json local y otro a través de una API, que nos permitirá tener datos actualizados diariamente. 
 
+Una captura de lo que verás:
 https://raw.githubusercontent.com/griselmatosm/marketgoo-code-test/master/src/images/panel.JPG
+
+Enlace a la paágina: https://griselmatosm.github.io/marketgoo-code-test/
 
 ### Pre-requisitos 📋
 
 Si quieres clonar el repo, deberás tener instalado node.js
+Luego en tu terminal ejecuta: git clone https://github.com/griselmatosm/marketgoo-code-test.git
 
 ### Instalación 🔧
 
