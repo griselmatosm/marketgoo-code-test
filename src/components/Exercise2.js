@@ -1,53 +1,62 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header';
 import Loader from './Loader';
-import { Panel, PanelHeader, PanelContent, Metric } from '@marketgoo/ola';
+import Panel from './Panel';
+import { Metric } from '@marketgoo/ola';
 import { connect } from 'react-redux';
 import { fetchDataApi } from '../actions';
+import { newTitlesAndTags } from '../services/newTitlesAndTags';
+import humanFormat from 'human-format';
+import '../styles/Exercises.css';
 
 const Exercise2 = (props) => {
-  const [errorMessage, setErrorMessage] = useState('');
 
-  console.log(props.data);
+  const { fetchDataApi } = props
 
   useEffect(() => {
-    props.fetchDataApi();
-  }, []);
+    fetchDataApi();
+  }, [fetchDataApi]);
 
   const { data } = props;
-
-  const dataArr = Object.keys(data).map((key) => [key, data[key]]);
-
-  const metrics = dataArr.map((item, index) => {
-    return (
-      <figure key={index}>
-        <Metric busy={false} className={null} footer={null} title={item[0]} value={item[1].toString()} valueIcon={false} variant={null} />
-      </figure>
-    );
-  });
+  const { error } = props;
 
   const renderContent = () => {
-    if (props.data) {
-      
-      return <> {metrics} </>;
-    } else {
-      return <Loader />;
+    if (data && !error) {
+      const dataArr = Object.keys(data).map((key) => [key, data[key]]);
+
+      const metrics = dataArr.map((item, index) => {
+        return (
+            <Metric 
+              key={index} 
+              title={newTitlesAndTags[item[0]].title} 
+              value={humanFormat(item[1])} 
+              variant={newTitlesAndTags[item[0]].tag} 
+            />
+        );
+      });
+      return <> {metrics} </>
+    } if(!data && error ) {
+      return <div> {error} </div>
     }
+    return <Loader />
   };
 
   return (
     <>
       <Header title="Exercise 2" />
-      <Panel className="">
-        <PanelHeader className={null} intro="Aquí mostramos información sobre los datos globales a nivel mundial del impacto de la enfermedad Covid-19" title="Datos globales Covid-19"></PanelHeader>
-        <PanelContent> {renderContent()} </PanelContent>
-      </Panel>
+      <Panel 
+        intro="Aquí mostramos información sobre los datos globales a nivel mundial del impacto de la enfermedad Covid-19" 
+        title="Datos globales Covid-19" 
+        data={data}
+        error={error}
+        renderContent={renderContent}
+      />
     </>
   );
 };
 
-const mapStateToProps = ({ data }) => {
-  return { data };
+const mapStateToProps = (state) => {
+  return { data: state.data, error: state.error };
 };
 
 export default connect(mapStateToProps, { fetchDataApi })(Exercise2);

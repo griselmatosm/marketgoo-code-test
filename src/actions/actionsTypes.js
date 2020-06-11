@@ -1,1 +1,2 @@
-export const FETCH_DATA = 'FETCH_DATA';
+export const GET_SUCCESS = 'GET_SUCCESS';
+export const GET_ERROR = 'GET_ERROR';

@@ -1,0 +1,7 @@
+.panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,12em);
+    justify-content: space-between;
+    grid-row-gap: 35px;
+    row-gap: 35px;
+}

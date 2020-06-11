@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import dataLocal from '../services/fetchData';
-import { Panel, PanelHeader, PanelContent, Metric } from '@marketgoo/ola';
+import Panel from './Panel';
+import { Metric } from '@marketgoo/ola';
+import { newTitlesAndTags } from '../services/newTitlesAndTags';
+import humanFormat from 'human-format';
+import '../styles/Exercises.css';
 
-const Exercise1 = (props) => {
+const Exercise1 = () => {
   const [dataGlobal, setDataGlobal] = useState({});
 
   useEffect(() => {
@@ -12,27 +16,30 @@ const Exercise1 = (props) => {
     });
   }, []);
 
-  // console.log(dataGlobal);
+  const renderContent = () => {
+    const dataArr = Object.keys(dataGlobal).map((key) => [key, dataGlobal[key]]);
 
-  const dataArr = Object.keys(dataGlobal).map(key => [key, dataGlobal[key]])
-  console.log(dataArr);
-  
-  const metrics = dataArr.map((item, index) => {
-  
-    return (
-      <figure key={index}>
-        <Metric busy={false} className={null} footer={null} title={item[0]} value={item[1].toString()} valueIcon={false} variant={null}  />
-      </figure>
-    );
-  });
+    const metrics = dataArr.map((item, index) => {
+      return (
+        <Metric 
+          key={index} 
+          title={newTitlesAndTags[item[0]].title} 
+          value={humanFormat(item[1])} 
+          variant={newTitlesAndTags[item[0]].tag} 
+        />
+      ) 
+    });
+    return metrics
+  }
 
   return (
     <>
       <Header title="Exercise 1" />
-      <Panel>
-        <PanelHeader className={null} intro="Aquí mostramos información sobre los datos globales a nivel mundial del impacto de la enfermedad Covid-19" title="Datos globales Covid-19"></PanelHeader>
-        <PanelContent>{metrics}</PanelContent>
-      </Panel>
+      <Panel 
+        intro="Aquí mostramos información sobre los datos globales a nivel mundial del impacto de la enfermedad Covid-19" 
+        title="Datos globales Covid-19" 
+        renderContent={renderContent}
+      />
     </>
   );
 };

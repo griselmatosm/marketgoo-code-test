@@ -1,12 +1,23 @@
-import { FETCH_DATA } from './actionsTypes';
+import { GET_SUCCESS } from './actionsTypes';
+import { GET_ERROR } from './actionsTypes';
 import axios from 'axios';
 
 const API_URL = 'https://api.covid19api.com/summary';
 
-export const fetchDataApi = () => async (dispatch) => {
-  const response = await axios.get(API_URL);
-  let err;
-  if (response.status !== 200) throw err = Error('Error: Too Many Requests');
+const getSucces = (response) => {
+  return {type: GET_SUCCESS, payload: response.data.Global}
+} 
 
-  dispatch({ type: FETCH_DATA, payload: response.data.Global || err });
+const getError = (err) => {
+  return {type: GET_ERROR, payload: err.message}
+}
+
+export const fetchDataApi = () => (dispatch) => {
+  axios.get(API_URL)
+  .then((response) => {
+    dispatch(getSucces(response))
+  })
+  .catch((err) =>{
+    dispatch(getError(err))
+  })
 };

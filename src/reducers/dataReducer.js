@@ -1,8 +1,8 @@
-import { FETCH_DATA } from '../actions/actionsTypes';
+export const GET_SUCCESS = 'GET_SUCCESS';
 
-export default (state = {}, action) => {
+export default (state = null, action) => {
   switch (action.type) {
-    case FETCH_DATA:
+    case GET_SUCCESS:
       return action.payload;
 
     default:
