@@ -1,69 +1,36 @@
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Covid-19 Panel
 
-## Available Scripts
+El propósito de este ejercicio es implementar un panel que muestre información sobre la enfermedad de Covid-19 en el mundo. Para eso, tendremos datos en 2 formatos, uno en un archivo json local y otro a través de una API, que nos permitirá tener datos actualizados diariamente. 
 
-In the project directory, you can run:
+https://raw.githubusercontent.com/griselmatosm/marketgoo-code-test/master/src/images/panel.JPG
 
-### `npm start`
+### Pre-requisitos 📋
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Si quieres clonar el repo, deberás tener instalado node.js
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+### Instalación 🔧
 
-### `npm test`
+Ahora solo tendrás que ejecutar npm install o yarn install desde tu terminal para istalar las dependencias.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Despliegue 📦
 
-### `npm run build`
+Ejecuta npm run build y luego mv build docs para crear la carpeta docs para producción.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Construido con 🛠️
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Para su realización se han implementado las siguientes librerías:
+* React
+* React-router
+* React-redux
+* Redux-thunk
+* Axios
+* Ola para los estilos (https://github.com/marketgoo/Ola)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Autores ✒️
 
-### `npm run eject`
+* **Grisel Matos* - [griselmatosm](https://github.com/griselmatosm)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+⌨️ con ❤️ por [griselmatosm](https://github.com/griselmatosm) 😊
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
