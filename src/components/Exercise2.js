@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Header from './Header';
 import Loader from './Loader';
 import Panel from './Panel';
@@ -8,6 +9,7 @@ import { fetchDataApi } from '../actions';
 import { newTitlesAndTags } from '../services/newTitlesAndTags';
 import humanFormat from 'human-format';
 import '../styles/Exercises.css';
+import Button from './Button';
 
 const Exercise2 = (props) => {
 
@@ -51,6 +53,9 @@ const Exercise2 = (props) => {
         error={error}
         renderContent={renderContent}
       />
+      <Link to="/exercise1">
+        <Button title="Exercise 1"/>
+      </Link>
     </>
   );
 };
