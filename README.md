@@ -6,7 +6,7 @@ El propósito de este ejercicio es implementar un panel que muestre información
 Una captura de lo que verás:
 https://raw.githubusercontent.com/griselmatosm/marketgoo-code-test/master/src/images/panel.JPG
 
-Enlace a la paágina: https://griselmatosm.github.io/marketgoo-code-test/
+Enlace a la página: https://griselmatosm.github.io/marketgoo-code-test/
 
 ### Pre-requisitos 📋
 
