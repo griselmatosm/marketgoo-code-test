@@ -16,6 +16,3 @@ export default () =>
             </Router>
         </section>
     </div>
-
-
-
