@@ -1,10 +1,10 @@
 import React from 'react';
 import { Spinner } from '@marketgoo/ola';
 
-const Loader = (props) => {
+const Loader = () => {
   return (
     <figure>
-      <Spinner className={null} size="medium" />
+      <Spinner size="medium" />
     </figure>
   );
 };

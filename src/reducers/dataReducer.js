@@ -1,4 +1,4 @@
-export const GET_SUCCESS = 'GET_SUCCESS';
+import { GET_SUCCESS } from '../actions/actionsTypes';
 
 export default (state = null, action) => {
   switch (action.type) {

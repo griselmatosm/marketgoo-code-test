@@ -1,4 +1,4 @@
-export const GET_ERROR = 'GET_ERROR';
+import { GET_ERROR } from '../actions/actionsTypes';
 
 export default (state = null, action) => {
     switch (action.type) {

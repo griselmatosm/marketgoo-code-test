@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Header from './Header';
-import dataLocal from '../services/fetchData';
 import Panel from './Panel';
+import Button from './Button';
 import { Metric } from '@marketgoo/ola';
+import dataLocal from '../services/fetchData';
 import { newTitlesAndTags } from '../services/newTitlesAndTags';
 import humanFormat from 'human-format';
 import '../styles/Exercises.css';
-import Button from './Button';
+
 
 const Exercise1 = () => {
   const [dataGlobal, setDataGlobal] = useState({});

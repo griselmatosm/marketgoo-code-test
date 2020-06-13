@@ -1,15 +1,16 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 import Header from './Header';
 import Loader from './Loader';
 import Panel from './Panel';
+import Button from './Button';
 import { Metric } from '@marketgoo/ola';
-import { connect } from 'react-redux';
 import { fetchDataApi } from '../actions';
 import { newTitlesAndTags } from '../services/newTitlesAndTags';
 import humanFormat from 'human-format';
 import '../styles/Exercises.css';
-import Button from './Button';
+
 
 const Exercise2 = (props) => {
 
@@ -49,8 +50,6 @@ const Exercise2 = (props) => {
       <Panel 
         intro="Aquí mostramos información sobre los datos globales a nivel mundial del impacto de la enfermedad Covid-19" 
         title="Datos globales Covid-19" 
-        data={data}
-        error={error}
         renderContent={renderContent}
       />
       <Link to="/exercise1">
