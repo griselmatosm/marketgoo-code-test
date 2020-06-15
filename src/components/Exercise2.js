@@ -25,7 +25,8 @@ const Exercise2 = (props) => {
 
   const renderContent = () => {
     if (data && !error) {
-      const dataArr = Object.keys(data).map((key) => [key, data[key]]);
+      const dataGlobal = props.data.Global
+      const dataArr = Object.keys(dataGlobal).map((key) => [key, dataGlobal[key]]);
 
       const metrics = dataArr.map((item, index) => {
         return (
@@ -54,6 +55,9 @@ const Exercise2 = (props) => {
       />
       <Link to="/exercise1">
         <Button title="Exercise 1"/>
+      </Link>
+      <Link to="/exercise3">
+        <Button title="Exercise 3"/>
       </Link>
     </>
   );

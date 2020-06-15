@@ -8,6 +8,7 @@ const Main = () => (
     <img src={logo} className="App-logo" alt="logo" />
     <Link to="/exercise1">Exercise 1</Link>
     <Link to="/exercise2">Exercise 2</Link>
+    <Link to="/exercise3">Exercise 3</Link>
   </section>
 );
 

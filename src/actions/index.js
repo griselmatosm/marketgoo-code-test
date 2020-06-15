@@ -5,7 +5,7 @@ import axios from 'axios';
 const API_URL = 'https://api.covid19api.com/summary';
 
 const getSucces = (response) => {
-  return {type: GET_SUCCESS, payload: response.data.Global}
+  return {type: GET_SUCCESS, payload: response.data}
 } 
 
 const getError = (err) => {

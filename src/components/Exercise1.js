@@ -46,6 +46,9 @@ const Exercise1 = () => {
       <Link to="/exercise2">
         <Button title="Exercise 2" />
       </Link>
+      <Link to="/exercise3">
+        <Button title="Exercise 3" />
+      </Link>
     </>
   );
 };
