@@ -38,7 +38,14 @@ const Exercise3 = (props) => {
 
       if (Arr.length > 0) {
         const metrics = Arr[0].map((item, index) => {
-          return <Metric key={index} title={newTitlesAndTags[item[0]].title} value={humanFormat(item[1])} variant={newTitlesAndTags[item[0]].tag} />;
+          return (
+            <Metric 
+              key={index} 
+              title={newTitlesAndTags[item[0]].title} 
+              value={humanFormat(item[1])} 
+              variant={newTitlesAndTags[item[0]].tag} 
+            />
+          ) 
         });
         return <> {metrics} </>;
       }
@@ -55,7 +62,10 @@ const Exercise3 = (props) => {
       <form onSubmit={handleSubmit}>
         <Input onChange={handleTerm} placeholder="Enter a country" type="text" />
       </form>
-      <Panel intro={`Aquí mostramos información sobre los datos globales en ${term} del impacto de la enfermedad Covid-19`} title="Datos globales Covid-19" renderContent={renderContent} />
+      <Panel 
+        intro={`Aquí mostramos información sobre los datos globales en ${term} del impacto de la enfermedad Covid-19`} title="Datos globales Covid-19" 
+        renderContent={renderContent} 
+      />
       <Link to="/exercise1">
         <Button title="Exercise 1" />
       </Link>
