@@ -63,7 +63,8 @@ const Exercise3 = (props) => {
         <Input onChange={handleTerm} placeholder="Enter a country" type="text" />
       </form>
       <Panel 
-        intro={`Aquí mostramos información sobre los datos globales en ${term} del impacto de la enfermedad Covid-19`} title="Datos globales Covid-19" 
+        intro={`Aquí mostramos información sobre los datos globales en ${term} del impacto de la enfermedad Covid-19`} 
+        title="Datos globales Covid-19" 
         renderContent={renderContent} 
       />
       <Link to="/exercise1">
